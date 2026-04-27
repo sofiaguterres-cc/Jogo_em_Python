@@ -3,20 +3,23 @@
 
 import pygame
 
+from code.Menu import Menu
+
+
 class Game:
+
     def __init__(self):
-        self.window = None
-
-    def run(self, ):
-        print('Código Iniciado')
         pygame.init()
-        screen = pygame.display.set_mode(size = (600, 480))
-        print('Código Encerrado')
+        self.window = pygame.display.set_mode(size = (600, 480))
 
-        print('Looping Iniciado')
+    def run(self):
         while True:
+            menu = Menu(self.window)
+            menu.run()
+            pass
+
             # Checagem de todos os eventos
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit() # Fechar janela
-                    quit() # Finalizar o Pygame
+            # for event in pygame.event.get():
+            #    if event.type == pygame.QUIT:
+            #        pygame.quit() # Fechar janela
+            #        quit() # Finalizar o Pygame
